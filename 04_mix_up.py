@@ -12,9 +12,11 @@ Exemplo:
 Assuma que a e b tem tamanho 2 ou maior.
 """
 
+
 def mix_up(a, b):
-    # +++ SUA SOLUÇÃO +++
-    return
+    if len(a) <= 1:
+        return('uma ou ambas variáveis não contém tamanho insuficiente')
+    return " ".join([((b[slice(0, 2)])+a[2:]), ((a[slice(0, 2)])+b[2:])])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -42,3 +44,4 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
+    test(mix_up, ('a', 'b'), 'uma ou ambas variáveis não contém tamanho insuficiente')
