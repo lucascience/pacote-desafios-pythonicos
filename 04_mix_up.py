@@ -44,5 +44,5 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
-    test(mix_up, ('a', 'teste'), 'variáveis não contém tamanho insuficiente')
-    test(mix_up, ('teste', 'b'), 'variáveis não contém tamanho insuficiente')
+    test(mix_up, ('a', 'teste'), 'variáveis não contém tamanho suficiente')
+    test(mix_up, ('teste', 'b'), 'variáveis não contém tamanho suficiente')
