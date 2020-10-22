@@ -15,7 +15,7 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 def mix_up(a, b):
     if len(a) <= 1 or len(b) <= 1:
-        return('variáveis não contém tamanho insuficiente')
+        return('variáveis não contém tamanho suficiente')
     return " ".join([((b[slice(0, 2)])+a[2:]), ((a[slice(0, 2)])+b[2:])])
 
 
