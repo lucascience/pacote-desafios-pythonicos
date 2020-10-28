@@ -50,16 +50,37 @@ Dicas:
 * Não construa todo o programade uma vez. Faça por partes executando
 e conferindo cada etapa do seu progresso.
 """
-
 import sys
+from collections import Counter
 
 
-# +++ SUA SOLUÇÃO +++
-# Defina as funções print_words(filename) e print_top(filename).
+def print_words(filename):
+    word_count = file_list(filename)
+    words = sorted(word_count.keys())
+    for word in words:
+        print(word, word_count[word])
 
+
+def print_top(filename):
+    word_count = file_list(filename)
+    items = sorted(word_count.items(), key=lambda w: w[1], reverse=True)
+
+    for item in items[:20]:
+        print(item[0], item[1])
+
+
+def file_list(filename):
+    words = []
+    with open(filename, mode='r') as lines:
+        for line in lines:
+            words += line.lower().split()
+
+    return Counter(words)
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
 # parêtros do programa.
+
+
 def main():
     if len(sys.argv) != 3:
         print('Utilização: ./13_wordcount.py {--count | --topcount} file')
